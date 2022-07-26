@@ -6,6 +6,12 @@ export default defineNuxtConfig({
         '@fortawesome/fontawesome-svg-core/styles.css',
         "~/assets/css/style.css"],
   build: {
+    transpile:[
+        '@fortawesome/vue-fontawesome',
+        '@fortawesome/fontawesome-svg-core',
+        '@fortawesome/pro-solid-svg-icons',
+        
+      ],
     postcss: {
       postcssOptions: {
         plugins: {
