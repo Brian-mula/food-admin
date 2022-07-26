@@ -3,7 +3,10 @@
     <div class="">
     <Sidebar1/>
     </div>
-    <div class="">
+    <div class="pt-2 w-full mx-4">
+    <div>
+    <top-nav/>
+    </div>
       <slot />
     </div>
   </div>

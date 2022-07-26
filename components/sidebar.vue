@@ -21,7 +21,7 @@
               class="flex items-center p-2 text-base font-normal text-black rounded-sm hover:bg-pink-400 bg-white"
             >
               <font-awesome-icon :icon="['fas','home']" class="text-black"/>
-              <span class="ml-3">Dashboard</span>
+              <span class="ml-3">Live Orders</span>
             </nuxt-link>
           </li>
           <li>
