@@ -3,7 +3,7 @@
     <div class="">
     <Sidebar1/>
     </div>
-    <div class="pt-2 w-full mx-4">
+    <div class="pt-2 w-full px-4 bg-purple-100">
     <div>
     <top-nav/>
     </div>
