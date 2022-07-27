@@ -74,9 +74,9 @@
      <div v-for="order in orders" :key="order.id" class="mt-1 bg-white flex items-left hover:translate-x-1">
     <div class="px-2 text-sm font-normal py-2 w-20">{{order.id}}</div>
     <div class="px-2 text-sm font-normal py-2 w-60">{{order.name}}</div>
-    <div class="px-2 text-sm font-normal py-2 w-40">{{order.payment}}</div>
-    <div class="px-2 text-sm font-normal py-2 w-40">{{order.type}}</div>
-    <div class="px-2 text-sm font-normal py-2 w-40">{{order.status}}</div>
+    <div class="px-2 text-sm font-normal py-2 w-40 ">{{order.payment}}</div>
+    <div class="px-2 text-sm font-normal py-2 w-40 text-orange-600">{{order.type}}</div>
+    <div class="px-2 text-sm font-normal py-2 w-40 text-yellow-300">{{order.status}}</div>
     <div class="px-2 text-sm font-normal py-2 w-40">{{order.total}}</div>
     <div class="px-2 text-sm font-normal py-2 w-20">
     
