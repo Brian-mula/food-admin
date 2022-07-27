@@ -50,9 +50,9 @@
           <p class="text-sm font-normal text-pink-500">Ksh. 3200</p>
         </div>
       </div>
-      <div class="flex items-center justify-center px-2 cursor-pointer  w-24 bg-blue-600 rounded-sm ml-auto mr-auto mt-2">
+      <nuxt-link :to="{name:'foods-id',params:{id:food.id}}" class="flex items-center justify-center px-2 cursor-pointer  w-24 bg-blue-600 rounded-sm ml-auto mr-auto mt-2">
       <p class="text-sm font-normal text-white py-1">more</p>
-      </div>
+      </nuxt-link>
     </div>
     </div>
     <div class="h-5"></div>

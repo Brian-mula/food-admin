@@ -4,7 +4,7 @@
     <Sidebar1/>
     </div>
     <div class="pt-2 w-full px-4 bg-purple-100">
-    <div>
+    <div class="">
     <top-nav/>
     </div>
       <slot />

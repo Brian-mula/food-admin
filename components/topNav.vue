@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-between">
+    <div class="flex justify-between w-full">
       <div class="">
         <div
           class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none"
