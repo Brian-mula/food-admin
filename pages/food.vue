@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-purple-900 p-4 text-2xl font-normal">
-      List of food offered by the Restraunt
+      Food
     </h3>
     <h3 class="text-purple-900 p-4 text-xl font-normal">Categories</h3>
     <div class="grid grid-cols-6 mb-20">
