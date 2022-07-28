@@ -3,7 +3,14 @@
     <h3 class="text-purple-900 p-4 text-2xl font-normal">
       Food
     </h3>
-    <h3 class="text-purple-900 p-4 text-xl font-normal">Categories</h3>
+    
+    <div class="flex justify-end mb-2">
+    <nuxt-link to="/new_food" class="flex items-center justify-end px-4 bg-green-500 rounded-sm py-2 cursor-pointer ">
+    <font-awesome-icon :icon="['fas','plus']" class="text-white px-2" />
+    <p class="text-sm font-normal text-white py-1">New Food</p>
+    </nuxt-link>
+    </div>
+    <h3 class="text-purple-900 px-4 pb-2 text-xl font-normal">Categories</h3>
     <div class="grid grid-cols-6 mb-20">
       <div
         v-for="category in categories"
