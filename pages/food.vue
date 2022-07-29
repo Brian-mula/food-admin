@@ -1,14 +1,22 @@
 <template>
   <div>
-    <h3 class="text-purple-900 p-4 text-2xl font-normal">
-      Food
-    </h3>
-    
-    <div class="flex justify-end mb-2">
-    <nuxt-link to="/new_food" class="flex items-center justify-end px-4 bg-green-500 rounded-sm py-2 cursor-pointer ">
-    <font-awesome-icon :icon="['fas','plus']" class="text-white px-2" />
-    <p class="text-sm font-normal text-white py-1">New Food</p>
-    </nuxt-link>
+    <h3 class="text-purple-900 p-4 text-2xl font-normal">Food</h3>
+
+    <div class="flex justify-between mb-2">
+      <nuxt-link
+        to="/new_category"
+        class="flex items-center justify-end px-4 bg-green-500 rounded-sm py-2 cursor-pointer"
+      >
+        <font-awesome-icon :icon="['fas', 'plus']" class="text-white px-2" />
+        <p class="text-sm font-normal text-white py-1">New Category</p>
+      </nuxt-link>
+      <nuxt-link
+        to="/new_food"
+        class="flex items-center px-4 bg-green-500 rounded-sm py-2 cursor-pointer"
+      >
+        <font-awesome-icon :icon="['fas', 'plus']" class="text-white px-2" />
+        <p class="text-sm font-normal text-white py-1">New Food</p>
+      </nuxt-link>
     </div>
     <h3 class="text-purple-900 px-4 pb-2 text-xl font-normal">Categories</h3>
     <div class="grid grid-cols-6 mb-20">
@@ -35,32 +43,38 @@
     </div>
 
     <div class="grid grid-cols-5 gap-3">
-    <div class="relative w-52 h-56 bg-white shadow-lg pb-2 rounded-lg mb-16" v-for="food in foods" :key="food.id">
-      
       <div
-        class="absolute left-7 right-7 rounded-full h-36 top-0 -mt-14 w-36 bg-red-500"
+        class="relative w-52 h-56 bg-white shadow-lg pb-2 rounded-lg mb-16"
+        v-for="food in foods"
+        :key="food.id"
       >
-        <img
-          class="h-full w-full rounded-full cursor-pointer"
-          src="https://cdn.pixabay.com/photo/2022/06/07/20/58/salad-7249259__340.jpg"
-          alt=""
-        />
-      </div>
-      <h3 class="text-purple-900 p-4 text-xl font-normal mt-20 text-center">
-        Freaky Salad
-      </h3>
-      <div class="flex justify-between items-center px-4">
-        <div class="">
-          <p class="text-sm font-normal text-purple-900">60 Calories</p>
+        <div
+          class="absolute left-7 right-7 rounded-full h-36 top-0 -mt-14 w-36 bg-red-500"
+        >
+          <img
+            class="h-full w-full rounded-full cursor-pointer"
+            src="https://cdn.pixabay.com/photo/2022/06/07/20/58/salad-7249259__340.jpg"
+            alt=""
+          />
         </div>
-        <div>
-          <p class="text-sm font-normal text-pink-500">Ksh. 3200</p>
+        <h3 class="text-purple-900 p-4 text-xl font-normal mt-20 text-center">
+          Freaky Salad
+        </h3>
+        <div class="flex justify-between items-center px-4">
+          <div class="">
+            <p class="text-sm font-normal text-purple-900">60 Calories</p>
+          </div>
+          <div>
+            <p class="text-sm font-normal text-pink-500">Ksh. 3200</p>
+          </div>
         </div>
+        <nuxt-link
+          :to="{ name: 'foods-id', params: { id: food.id } }"
+          class="flex items-center justify-center px-2 cursor-pointer w-24 bg-blue-600 rounded-sm ml-auto mr-auto mt-2"
+        >
+          <p class="text-sm font-normal text-white py-1">more</p>
+        </nuxt-link>
       </div>
-      <nuxt-link :to="{name:'foods-id',params:{id:food.id}}" class="flex items-center justify-center px-2 cursor-pointer  w-24 bg-blue-600 rounded-sm ml-auto mr-auto mt-2">
-      <p class="text-sm font-normal text-white py-1">more</p>
-      </nuxt-link>
-    </div>
     </div>
     <div class="h-5"></div>
   </div>
@@ -105,50 +119,50 @@ const categories = ref([
     name: "Pizza",
   },
 ]);
-const foods=ref([
-    {
-        id:12,
-        image: '',
-        title:'',
-        price:'',
-        calories:''
-    },
-      {
-        id:12,
-        image: '',
-        title:'',
-        price:'',
-        calories:''
-    },
-      {
-        id:12,
-        image: '',
-        title:'',
-        price:'',
-        calories:''
-    },
-      {
-        id:12,
-        image: '',
-        title:'',
-        price:'',
-        calories:''
-    },
-      {
-        id:12,
-        image: '',
-        title:'',
-        price:'',
-        calories:''
-    },
-      {
-        id:12,
-        image: '',
-        title:'',
-        price:'',
-        calories:''
-    },
-])
+const foods = ref([
+  {
+    id: 12,
+    image: "",
+    title: "",
+    price: "",
+    calories: "",
+  },
+  {
+    id: 12,
+    image: "",
+    title: "",
+    price: "",
+    calories: "",
+  },
+  {
+    id: 12,
+    image: "",
+    title: "",
+    price: "",
+    calories: "",
+  },
+  {
+    id: 12,
+    image: "",
+    title: "",
+    price: "",
+    calories: "",
+  },
+  {
+    id: 12,
+    image: "",
+    title: "",
+    price: "",
+    calories: "",
+  },
+  {
+    id: 12,
+    image: "",
+    title: "",
+    price: "",
+    calories: "",
+  },
+]);
 </script>
 
 <style lang="scss" scoped></style>
