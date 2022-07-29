@@ -1,4 +1,4 @@
-import { doc, setDoc, getFirestore, collection,getDocs,getDoc } from "firebase/firestore";
+import { doc, setDoc, getFirestore, collection,getDocs,getDoc, deleteDoc } from "firebase/firestore";
 
 // !add food item to database
 export const newFood = async (
@@ -47,4 +47,11 @@ export const getSingleFood=async(id:string)=>{
 
 export const updateFood=async(id:string)=>{
     const db=getFirestore();
+}
+
+// !delete a food item
+
+export const deleteFood=async(id:string)=>{
+    const db = getFirestore();
+    await deleteDoc(doc(db,'foods',id));
 }

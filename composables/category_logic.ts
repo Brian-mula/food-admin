@@ -1,4 +1,4 @@
-import { doc, setDoc, getFirestore, collection,getDocs,getDoc } from "firebase/firestore";
+import { doc, setDoc, getFirestore, collection,getDocs,getDoc,deleteDoc } from "firebase/firestore";
 
 // !add category item to database
 export const newCategory = async (
@@ -44,4 +44,11 @@ export const getSingleCategory=async(id:string)=>{
 
 export const updateCategory=async(id:string)=>{
     const db=getFirestore();
+}
+
+// !delete a category
+export const deleteCategory=async(id:string)=>{
+    const db=getFirestore();
+    await deleteDoc(doc(db,'categories',id));
+
 }
