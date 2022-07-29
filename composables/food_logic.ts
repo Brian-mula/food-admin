@@ -42,3 +42,9 @@ export const getSingleFood=async(id:string)=>{
     }
     return foodItem;
 }
+
+// !update a food item
+
+export const updateFood=async(id:string)=>{
+    const db=getFirestore();
+}
