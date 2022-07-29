@@ -7,16 +7,16 @@ export default defineNuxtPlugin(nuxtApp => {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyALVh7VUEhHAd29cOSZSKJQqaAsitFWovk",
-  authDomain: "food-8653e.firebaseapp.com",
-  projectId: "food-8653e",
-  storageBucket: "food-8653e.appspot.com",
-  messagingSenderId: "626683976054",
-  appId: "1:626683976054:web:c1e9ebcfe720200e998257"
+  apiKey: config.API_KEY,
+  authDomain: config.AUTH_DOMAIN,
+  projectId: config.PROJECT_ID,
+  storageBucket: config.STORAGE_BUCKET,
+  messagingSenderId: config.MESSAGING_SENDER_ID,
+  appId: config.APP_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-console.log(app)
+// console.log(app)
   })
   

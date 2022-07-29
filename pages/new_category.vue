@@ -5,7 +5,7 @@
         Bostone Manager
       </h3>
       <p class="text-sm font-normal text-black py-2 text-center">
-        Your are adding new food for your customers
+        Your are adding new food category for your customers
       </p>
       <div class="block p-6 rounded-lg shadow-lg bg-white w-full">
         <form>
@@ -13,47 +13,13 @@
             <label
               for="exampleInputEmail1"
               class="form-label inline-block mb-2 text-gray-700"
-              >Food title:</label
+              >Catgory name:</label
             >
             <input
               type="text"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g pizza"
             />
-          </div>
-          <div class="form-group mb-2">
-            <label
-              for="exampleInputPassword1"
-              class="form-label inline-block mb-2 text-gray-700"
-              >Price:</label
-            >
-            <input
-              type="text"
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="e.g 300"
-            />
-          </div>
-          <div class="form-group mb-2">
-            <label
-              for="exampleInputPassword1"
-              class="form-label inline-block mb-2 text-gray-700"
-              >Calories:</label
-            >
-            <input
-              type="text"
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="e.g 10"
-            />
-          </div>
-          <div class="form-group mb-2">
-            <label
-              for="exampleInputPassword1"
-              class="form-label inline-block mb-2 text-gray-700"
-              >Description:</label
-            >
-            <textarea
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            ></textarea>
           </div>
           <div class="form-group mb-2">
             <label
@@ -66,18 +32,6 @@
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g 10"
             />
-          </div>
-          <div class="form-group mb-2">
-            <label
-              for="exampleInputPassword1"
-              class="form-label inline-block mb-2 text-gray-700"
-              >Category:</label
-            >
-            <select
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-            >
-            <option value="">Select category</option>
-            </select>
           </div>
          <div class="flex justify-between">
           <div>
