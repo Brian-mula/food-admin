@@ -16,6 +16,7 @@
               >Food title:</label
             >
             <input
+            v-model="f_title"
               type="text"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g pizza"
@@ -28,6 +29,7 @@
               >Price:</label
             >
             <input
+            v-model="f_price"
               type="text"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g 300"
@@ -40,6 +42,7 @@
               >Calories:</label
             >
             <input
+            v-model="f_calories"
               type="text"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g 10"
@@ -52,6 +55,7 @@
               >Description:</label
             >
             <textarea
+            v-model="f_description"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             ></textarea>
           </div>
@@ -62,6 +66,7 @@
               >Image:</label
             >
             <input
+            @change="onfileChange"
               type="file"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g 10"
@@ -74,9 +79,11 @@
               >Category:</label
             >
             <select
+            v-model="f_category"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             >
-            <option value="">Select category</option>
+            <option>Select category</option>
+            <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
             </select>
           </div>
          <div class="flex justify-between">
@@ -103,6 +110,28 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const router=useRouter()
+const categories=ref([]);
+onMounted(async()=>{
+  categories.value=await getAllCategories();
+  console.log(categories.value)
+})
+const emits = defineEmits(["fileChange"]);
+const fileUpload = ref(null);
+const onfileChange = async (e) => {
+  var files = e.target.files || e.dataTransfer.files;
+  if (!files.length) return;
+  const { snapshot, downloadUrl, metadata } = await uploadFile(files[0]);
+  emits("fileChange", snapshot, downloadUrl, metadata);
+  console.log("download url from sell", downloadUrl);
+  fileUpload.value = downloadUrl;
+};
+const f_title=ref('');
+const f_price=ref('');
+const f_calories=ref('');
+const f_description=ref('')
+const f_category=ref('')
+</script>
 
 <style lang="scss" scoped></style>

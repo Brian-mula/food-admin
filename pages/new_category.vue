@@ -47,7 +47,7 @@
             <div>
               <button
               @click="handleSubmit"
-                type="submit"
+                type="button"
                 class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
               >
                 Submit
@@ -62,6 +62,7 @@
 
 <script setup>
 const emits = defineEmits(["fileChange"]);
+const router=useRouter()
 const fileUpload = ref(null);
 const onfileChange = async (e) => {
   var files = e.target.files || e.dataTransfer.files;
@@ -76,6 +77,8 @@ const c_name=ref('')
 const handleSubmit=async()=>{
   if(c_name.value && fileUpload.value){
     await newCategory(c_name.value,fileUpload.value)
+    router.push('/food')
+
   }else{
     console.log('fill out the values first ')
   }
