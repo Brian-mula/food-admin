@@ -44,7 +44,7 @@ export const getSingleFood=async(id:string)=>{
 }
 
 // !update a food item
-
+// TODO enable document update
 export const updateFood=async(id:string)=>{
     const db=getFirestore();
 }
