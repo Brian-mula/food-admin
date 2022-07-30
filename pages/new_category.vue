@@ -16,6 +16,7 @@
               >Catgory name:</label
             >
             <input
+              v-model="c_name"
               type="text"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g pizza"
@@ -28,35 +29,57 @@
               >Image:</label
             >
             <input
+              @change="onfileChange"
               type="file"
               class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="e.g 10"
             />
           </div>
-         <div class="flex justify-between">
-          <div>
-          <button
-            type="submit"
-            class="px-6 py-2.5 bg-gray-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-          >
-            Cancel
-          </button>
+          <div class="flex justify-between">
+            <div>
+              <button
+                type="submit"
+                class="px-6 py-2.5 bg-gray-400 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-gray-500 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              >
+                Cancel
+              </button>
+            </div>
+            <div>
+              <button
+              @click="handleSubmit"
+                type="submit"
+                class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+              >
+                Submit
+              </button>
+            </div>
           </div>
-          <div>
-          <button
-            type="submit"
-            class="px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-          >
-            Submit
-          </button>
-          </div>
-         </div>
         </form>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const emits = defineEmits(["fileChange"]);
+const fileUpload = ref(null);
+const onfileChange = async (e) => {
+  var files = e.target.files || e.dataTransfer.files;
+  if (!files.length) return;
+  const { snapshot, downloadUrl, metadata } = await uploadFile(files[0]);
+  emits("fileChange", snapshot, downloadUrl, metadata);
+  console.log("download url from sell", downloadUrl);
+  fileUpload.value = downloadUrl;
+};
+
+const c_name=ref('')
+const handleSubmit=async()=>{
+  if(c_name.value && fileUpload.value){
+    await newCategory(c_name.value,fileUpload.value)
+  }else{
+    console.log('fill out the values first ')
+  }
+}
+</script>
 
 <style lang="scss" scoped></style>
