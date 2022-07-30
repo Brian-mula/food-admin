@@ -41,6 +41,7 @@ export const getSingleCategory=async(id:string)=>{
 }
 
 // !update a food item
+// TODO enable category update
 
 export const updateCategory=async(id:string)=>{
     const db=getFirestore();
